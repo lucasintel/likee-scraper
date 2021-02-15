@@ -9,3 +9,16 @@ targets:
     main: src/likeer.cr
 
 crystal: 0.36.1
+
+dependencies:
+  likee:
+    github: kandayo/likee.cr
+    version: ~> 0.1.0
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 0.13.0
+  webmock:
+    github: manastech/webmock.cr
+    branch: master
