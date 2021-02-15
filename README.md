@@ -1,4 +1,4 @@
-# Likeer
+# Likee Scraper
 
 ![Unit Tests](https://github.com/kandayo/likee-scraper/workflows/Unit%20Tests/badge.svg)
 ![Integration Tests](https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg)
