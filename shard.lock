@@ -4,9 +4,17 @@ shards:
     git: https://github.com/crystal-ameba/ameba.git
     version: 0.13.4
 
+  commander:
+    git: https://github.com/mrrooijen/commander.git
+    version: 0.3.5
+
   likee:
     git: https://github.com/kandayo/likee.cr.git
     version: 0.1.0
+
+  retriable:
+    git: https://github.com/Sija/retriable.cr.git
+    version: 0.2.2
 
   webmock:
     git: https://github.com/manastech/webmock.cr.git

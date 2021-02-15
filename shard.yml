@@ -6,14 +6,18 @@ authors:
 
 targets:
   likeer:
-    main: src/likeer.cr
+    main: src/entrypoint.cr
 
 crystal: 0.36.1
 
 dependencies:
+  commander:
+    github: mrrooijen/commander
+    version: ~> 0.3.5
   likee:
     github: kandayo/likee.cr
-    version: ~> 0.1.0
+  retriable:
+    github: Sija/retriable.cr
 
 development_dependencies:
   ameba:
