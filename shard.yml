@@ -9,5 +9,3 @@ targets:
     main: src/likeer.cr
 
 crystal: 0.36.1
-
-license: MIT
