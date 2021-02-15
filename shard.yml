@@ -1,0 +1,13 @@
+name: likeer
+version: 0.1.0
+
+authors:
+  - kandayo <kdy@absolab.xyz>
+
+targets:
+  likeer:
+    main: src/likeer.cr
+
+crystal: 0.36.1
+
+license: MIT
