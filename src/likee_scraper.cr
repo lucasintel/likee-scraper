@@ -1,9 +1,9 @@
 require "likee"
 require "log"
 
-require "./likeer/*"
+require "./likee_scraper/*"
 
-module Likeer
+module LikeeScraper
   # Iterates through the user - *uid* - profile and download all videos.
   def self.download_user_feed(uid : String)
     VideoCollector.collect_each(uid: uid) do |video|

@@ -1,6 +1,6 @@
 require "./utils"
 
-module Likeer
+module LikeeScraper
   # The `VideoCollector` module defines the interaction with the Likee API
   # to fetch videos from the user profile.
   module VideoCollector

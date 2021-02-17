@@ -23,7 +23,7 @@ VIDEO_IDS = %w[
   6811686374744290608 6811314769878873392 6810943684704498992
 ]
 
-describe Likeer::VideoCollector do
+describe LikeeScraper::VideoCollector do
   describe ".collect_each" do
     it "iterates through all pages of the user profile" do
       WebMock
@@ -57,7 +57,7 @@ describe Likeer::VideoCollector do
 
       archived_ids = [] of String
 
-      Likeer::VideoCollector.collect_each(uid: "111") do |video|
+      LikeeScraper::VideoCollector.collect_each(uid: "111") do |video|
         archived_ids << video.id
       end
 

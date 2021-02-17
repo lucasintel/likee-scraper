@@ -1,3 +1,3 @@
-module Likeer
+module LikeeScraper
   VERSION = "0.1.0"
 end

@@ -1,7 +1,7 @@
 require "spec"
 require "webmock"
 
-require "../src/likeer"
+require "../src/likee_scraper"
 
 def mocked_profile_feed_page_1
   File.read("#{mocks_path}/profile_feed_page_1.json")

@@ -1,8 +1,8 @@
 require "commander"
 
-require "../likeer"
+require "../likee_scrapper"
 
-module Likeer
+module LikeeScraper
   # TODO: Refactor
   module CLI
     def self.config
@@ -31,7 +31,7 @@ module Likeer
             Log.info { "Likeer is running (v#{VERSION})" }
 
             elapsed_time = Time.measure do
-              Likeer.download_user_feed(uid: uid)
+              LikeeScrapper.download_user_feed(uid: uid)
             end
 
             Log.info { "Finished in #{elapsed_time.to_i} seconds" }

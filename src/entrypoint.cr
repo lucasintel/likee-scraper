@@ -1,3 +1,3 @@
 require "./cli/*"
 
-Likeer::CLI.run(ARGV)
+LikeeScraper::CLI.run(ARGV)

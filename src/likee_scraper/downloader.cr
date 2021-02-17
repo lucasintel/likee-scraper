@@ -3,7 +3,7 @@ require "http/client"
 
 require "./utils"
 
-module Likeer
+module LikeeScraper
   class Downloader
     Log = ::Log.for("Downloader")
 

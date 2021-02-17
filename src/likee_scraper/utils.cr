@@ -1,6 +1,6 @@
 require "retriable"
 
-module Likeer
+module LikeeScraper
   # The `Utils` module defines multiple helpers.
   module Utils
     # Retries the *&block* when a connection error or a Likee API error occurs.
