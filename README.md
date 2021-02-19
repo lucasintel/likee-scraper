@@ -25,14 +25,21 @@ See also: [**Likee API Wrapper**](https://github.com/kandayo/likee.cr).
 
 ## Features
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/43556511/108448057-ee8f7680-7258-11eb-90bd-7f253b3d0b4f.png" alt="Terminalizer">
-</p>
+```
+$ likeer --user @Likee_US --user @Likee_UK --fast-update
+Collecting videos from profile @Likee_US.
+Likee US - 000005.mp4 [========================] 11.1 MB | 100%
+Likee US - 000004.mp4; skipping
+✅ Likee US in sync!
+Collecting videos from profile @Likee_UK.
+Likee UK - 000011.mp4 [========================] 22.2 MB | 100%
+Likee UK - 000010.mp4; skipping
+✅ Likee UK in sync!
+```
 
-- Download profiles by @username.
-- Download profiles by User ID.
+- Download profiles by @username or User ID.
 - Built for archivists in mind: smart fast update.
-- Extract metadata from entities.
+- JSON metadata is stored alongside the video.
 - Batch file, cronjob friendly.
 
 ## Disclaimer
@@ -112,7 +119,7 @@ to update your personal archive.
 
 ```bash
 $ likeer -u @username -f
-# => Example Username - 000003.mp4 [========================] 12.1 MB / 12.1 MB
+# => Example Username - 000003.mp4 [========================] 11.1 MB | 100%
 # => Example Username - 000002.mp4; skipping
 # => User @username in sync!
 ```
