@@ -221,7 +221,7 @@ shards build --release</code></pre>
 </a>Download profile by @username</h3>
 
 <p>Looking up a user by username requires an additional API request. It's strongly
-recommended to use User IDs. Usernames must be prefixed with an "@".</p>
+recommended to use User IDs. Usernames must be prefixed with an <code>@</code>.</p>
 
 <pre><code class="language-bash">$ likeer -u @username</code></pre>
 
@@ -242,12 +242,12 @@ recommended to use User IDs. Usernames must be prefixed with an "@".</p>
 </a>Batch file</h3>
 
 <p>If <code>--batch-file <file.txt></code> (or <code>-a</code>) is given, Likee will read <em>file.txt</em>
-expecting @usernames and IDs to download, one identifier per line.
+expecting @usernames and User IDs to download, one identifier per line.
 Lines starting with "#" or empty lines are considered as comments and ignored.</p>
 
-<p>Usernames must be prefixed with an "@", e.g. <code>@username</code>.</p>
+<p>Usernames must be prefixed with an <code>@</code>, e.g. <code>@username</code>.</p>
 
-<p>IDs must not be prefixed with an "@", e.g. <code>1111111</code>.</p>
+<p>IDs must not be prefixed with an <code>@</code>, e.g. <code>1111111</code>.</p>
 
 <pre><code class="language-bash">$ cat batch.txt
 ~> # Comment (ignored)
@@ -263,7 +263,7 @@ $ likeer -a batch.txt</code></pre>
 
 <p>If <code>--fast-update</code> (or <code>-f</code>) is given, Likeer stops when arriving at the
 first already downloaded video. This flag is recommended when you use Likeer
-to update your personal Likee archive.</p>
+to update your personal archive.</p>
 
 <pre><code class="language-bash">$ likeer -u @username -f
 # => Example Username - 000003.mp4 [========================] 12.1 MB / 12.1 MB
