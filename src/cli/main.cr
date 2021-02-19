@@ -1,6 +1,7 @@
 require "option_parser"
+
 require "../likee_scraper"
-require "./cli/*"
+require "./main/*"
 
 module LikeeScraper
   module CLI
