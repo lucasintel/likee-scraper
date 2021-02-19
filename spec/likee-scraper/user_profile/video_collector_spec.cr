@@ -1,4 +1,4 @@
-require "../spec_helper"
+require "../../spec_helper"
 
 VIDEO_IDS = %w[
   6869760684842841392 6868091316954232112 6867348635504375088
@@ -32,7 +32,7 @@ describe LikeeScraper::VideoCollector do
           body: {uid: "111", lastPostId: "", count: 100, tabType: 0}.to_json
         )
         .to_return(
-          status: 200, body: mocked_profile_feed_page_1
+          status: 200, body: load_fixture("profile_feed_page_1")
         )
 
       WebMock
@@ -41,7 +41,7 @@ describe LikeeScraper::VideoCollector do
           body: {uid: "111", lastPostId: "6821705670157432112", count: 100, tabType: 0}.to_json
         )
         .to_return(
-          status: 200, body: mocked_profile_feed_page_2
+          status: 200, body: load_fixture("profile_feed_page_2")
         )
 
       WebMock
@@ -50,14 +50,12 @@ describe LikeeScraper::VideoCollector do
           body: {uid: "111", lastPostId: "6810943684704498992", count: 100, tabType: 0}.to_json
         )
         .to_return(
-          status: 200, body: mocked_profile_feed_page_3
+          status: 200, body: load_fixture("profile_feed_page_3")
         )
-
-      WebMock.stub(:get, /video.like.video/)
 
       archived_ids = [] of String
 
-      LikeeScraper::VideoCollector.collect_each(uid: "111") do |video|
+      LikeeScraper::VideoCollector.collect_each(user_id: "111") do |video|
         archived_ids << video.id
       end
 

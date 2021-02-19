@@ -3,18 +3,15 @@ require "webmock"
 
 require "../src/likee_scraper"
 
-def mocked_profile_feed_page_1
-  File.read("#{mocks_path}/profile_feed_page_1.json")
+# Clears all Webmock stubs and sets `Webmock.allow_net_connect` to false.
+Spec.before_each &->WebMock.reset
+
+def load_fixture(name : String?)
+  return "" unless name
+
+  File.read("#{fixtures_path}/#{name}.json")
 end
 
-def mocked_profile_feed_page_2
-  File.read("#{mocks_path}/profile_feed_page_2.json")
-end
-
-def mocked_profile_feed_page_3
-  File.read("#{mocks_path}/profile_feed_page_3.json")
-end
-
-def mocks_path : String
-  File.expand_path("../mocks", __FILE__)
+def fixtures_path : String
+  File.expand_path("../fixtures", __FILE__)
 end

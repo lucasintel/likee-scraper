@@ -7,15 +7,19 @@ module LikeeScraper
     def self.retry_on_connection_error(&block)
       on_retry_callback =
         ->(_ex : Exception, attempt : Int32, _elapsed_time : Time::Span, _next_interval : Time::Span) do
-          Log.error {
-            "An error occoured while fetching posts; retring (#{attempt}/5)..."
-          }
+          Log.error { "An error occoured while fetching posts; retring (#{attempt}/5)..." }
         end
 
       Retriable.retry(
-        on: {IO::TimeoutError, Errno::ECONNRESET, Likee::Client::ClientError},
+        on: {
+          IO::TimeoutError,
+          Errno::ECONNRESET,
+          Likee::RequestFailedError,
+          Likee::APIError,
+          HTTPError,
+        },
         on_retry: on_retry_callback,
-        intervals: Array.new(5, 2.seconds)
+        intervals: Array.new(5, 5.seconds)
       ) do
         yield
       end

@@ -1,0 +1,20 @@
+module LikeeScraper
+  module CLI
+    class FileProcessor
+      def self.call(file : String) : Array(String)?
+        return unless File.exists?(file)
+
+        ids = [] of String
+
+        File.each_line(file) do |line|
+          next if line.empty?
+          next if line.starts_with?(/\s/) || line.starts_with?("#")
+
+          ids << line.strip
+        end
+
+        ids
+      end
+    end
+  end
+end
