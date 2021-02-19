@@ -7,6 +7,7 @@ module LikeeScraper
     Log = ::Log.for("Downloader")
 
     PROGRESS_BAR_SIZE = 30
+    MEGABYTE          = 1024**2
 
     def initialize(@video : Likee::Video)
       ensure_directory_exists
@@ -62,11 +63,11 @@ module LikeeScraper
         str << "]"
       end
 
-      formatted_file_size = (file_size / (1024**2)).round(1)
-      formatted_progress = (progress / (1024**2)).round(1)
+      formatted_progress = "%5.1f MB" % (progress / MEGABYTE)
+      formatted_percent = "%4.f%%" % (percent * 100)
 
       template = "\r#{@video.creator_nickname} — #{@video.id}.mp4 " \
-                 "#{bar} (#{formatted_progress} MB / #{formatted_file_size} MB)"
+                 "#{bar} #{formatted_progress} #{formatted_percent}"
 
       STDOUT.flush
       STDOUT.print(template)
