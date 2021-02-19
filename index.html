@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="Likee Scrapepr">
+
+
+    <link rel="canonical" href="https://absolab.xyz/likee-scraper">
+  
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="Likee Scrapepr">
+  <title>Likee Scrapepr main</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          Likee Scrapepr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="Likee Scrapepr/Likee" data-name="likee">
+      <a href="Likee.html">Likee</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Likee Scrapepr/Likee/Video" data-name="likee::video">
+      <a href="Likee/Video.html">Video</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="Likee Scrapepr/LikeeScraper" data-name="likeescraper">
+      <a href="LikeeScraper.html">LikeeScraper</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="Likee Scrapepr/LikeeScraper/CLI" data-name="likeescraper::cli">
+      <a href="LikeeScraper/CLI.html">CLI</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/CLI/FileProcessor" data-name="likeescraper::cli::fileprocessor">
+      <a href="LikeeScraper/CLI/FileProcessor.html">FileProcessor</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/HTTPError" data-name="likeescraper::httperror">
+      <a href="LikeeScraper/HTTPError.html">HTTPError</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/LikeeLogger" data-name="likeescraper::likeelogger">
+      <a href="LikeeScraper/LikeeLogger.html">LikeeLogger</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/UsernameNormalizer" data-name="likeescraper::usernamenormalizer">
+      <a href="LikeeScraper/UsernameNormalizer.html">UsernameNormalizer</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/UserNotFoundError" data-name="likeescraper::usernotfounderror">
+      <a href="LikeeScraper/UserNotFoundError.html">UserNotFoundError</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/Utils" data-name="likeescraper::utils">
+      <a href="LikeeScraper/Utils.html">Utils</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/VideoCollector" data-name="likeescraper::videocollector">
+      <a href="LikeeScraper/VideoCollector.html">VideoCollector</a>
+      
+    </li>
+  
+  <li class=" " data-id="Likee Scrapepr/LikeeScraper/VideoDownloader" data-name="likeescraper::videodownloader">
+      <a href="LikeeScraper/VideoDownloader.html">VideoDownloader</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="likee-scraper" class="anchor" href="#likee-scraper">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Likee Scraper</h1>
+
+<p><img src="https://github.com/kandayo/likee-scraper/workflows/Unit%20Tests/badge.svg" alt="Unit Tests"/>
+<img src="https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg" alt="Integration Tests"/>
+<a href="https://github.com/kandayo/likee-scraper/releases"><img src="https://img.shields.io/github/release/kandayo/likee-scraper.svg?label=Release" alt="GitHub release"/></a></p>
+
+<p>Download videos (and their metadata) from Likee. The videos are downloaded in
+their original quality, with no watermark.</p>
+
+<p>See also: <a href="https://github.com/kandayo/likee.cr"><strong>Likee API Wrapper</strong></a>.</p>
+
+<h2><a id="index" class="anchor" href="#index">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Index</h2>
+
+<ul><li><a href="#features">Features</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><ul><li><a href="#download-profile-by-username">Download profile by @username</a></li><li><a href="#download-profile-by-id">Download profile by ID</a></li><li><a href="#batch-file">Batch file</a></li><li><a href="#fast-update">Fast update</a></li></ul><li><a href="#contributing">Contributing</a></li><li><a href="#contributors">Contributors</a></li></ul>
+
+<h2><a id="features" class="anchor" href="#features">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Features</h2>
+
+<p><img src="https://user-images.githubusercontent.com/43556511/108448057-ee8f7680-7258-11eb-90bd-7f253b3d0b4f.png" alt="Terminalizer"/></p>
+
+<ul><li>Download profiles by @username.</li><li>Download profiles by user ID.</li><li>Built for archivists: smart fast update.</li><li>Extract metadata from entities.</li></ul>
+
+<h2><a id="disclaimer" class="anchor" href="#disclaimer">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Disclaimer</h2>
+
+<p>This app is in no way affiliated with, authorized, maintained or endorsed by
+Likee or any of its affiliates or subsidiaries.</p>
+
+<p>This is purely an educational proof of concept.</p>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<h3><a id="from-source" class="anchor" href="#from-source">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>From source</h3>
+
+<ol><li>Clone the repository:</li></ol>
+
+<pre><code class="language-bash">git clone https://github.com/kandayo/likee-scraper</code></pre>
+
+<ol><li>Compile the binary in release mode:</li></ol>
+
+<pre><code class="language-bash">cd likee-scraper
+shards build --release</code></pre>
+
+<ol><li>Move the binary to your PATH or use it right away:</li></ol>
+
+<pre><code class="language-bash">./bin/likeer --help</code></pre>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<p>For more examples, please refer to the <a href="https://absolab.xyz/likee-scraper"><strong>documentation</strong></a>.</p>
+
+<h3><a id="download-user-feed-by-username" class="anchor" href="#download-user-feed-by-username">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Download user feed by @username</h3>
+
+<p>Looking up a user by username requires an additional API request. It's strongly
+recommended to use user IDs. Usernames must be prefixed with an "@".</p>
+
+<pre><code class="language-bash">$ likeer -u @username</code></pre>
+
+<h3><a id="download-user-feed-by-id" class="anchor" href="#download-user-feed-by-id">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Download user feed by ID</h3>
+
+<p>If a identifier does not have a prefix, it is assumed to be an user ID.</p>
+
+<pre><code class="language-bash">$ likeer -u 11111111</code></pre>
+
+<h3><a id="batch-file" class="anchor" href="#batch-file">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Batch file</h3>
+
+<p>If <code>--batch-file <file.txt></code> (or <code>-a</code>) is given, Likee will read <em>file.txt</em>
+expecting @usernames and IDs to download, one identifier per line.
+Lines starting with "#" or empty lines are considered as comments and ignored.</p>
+
+<p>Usernames must be prefixed with an "@", e.g. <code>@username</code>.</p>
+
+<p>IDs must not be prefixed with an "@", e.g. <code>1111111</code>.</p>
+
+<pre><code class="language-bash">$ cat batch.txt
+~> # Comment (ignored)
+~> @username
+~> 111111111
+$ likeer -a batch.txt</code></pre>
+
+<h3><a id="fast-update" class="anchor" href="#fast-update">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Fast update</h3>
+
+<p>If <code>--fast-update</code> (or <code>-f</code>) is given, Likeer stops when arriving at the
+first already downloaded video. This flag is recommended when you use Likeer
+to update your personal Likee archive.</p>
+
+<pre><code class="language-bash">$ likeer -u @username -f
+# => Example Username - 000003.mp4 [========================] 12.1 MB / 12.1 MB
+# => Example Username - 000002.mp4; skipping
+# => User @username in sync!</code></pre>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/kandayo/likee-scraper/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/kandayo">kandayo</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>
