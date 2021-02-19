@@ -164,11 +164,17 @@
   </svg>
 </a>Features</h2>
 
-<p>&lt;p align="center">
-  &lt;img src="https://user-images.githubusercontent.com/43556511/108448057-ee8f7680-7258-11eb-90bd-7f253b3d0b4f.png" alt="Terminalizer">
-&lt;/p></p>
+<pre><code class="language-crystal">$ likeer --user @Likee_US --user @Likee_UK --fast-update
+Collecting videos from profile @Likee_US.
+Likee US - 000005.mp4 [========================] 11.1 MB | 100%
+Likee US - 000004.mp4; skipping
+✅ Likee US in sync!
+Collecting videos from profile @Likee_UK.
+Likee UK - 000011.mp4 [========================] 22.2 MB | 100%
+Likee UK - 000010.mp4; skipping
+✅ Likee UK in sync!</code></pre>
 
-<ul><li>Download profiles by @username.</li><li>Download profiles by User ID.</li><li>Built for archivists in mind: smart fast update.</li><li>Extract metadata from entities.</li><li>Batch file, cronjob friendly.</li></ul>
+<ul><li>Download profiles by @username or User ID.</li><li>Built for archivists in mind: smart fast update.</li><li>JSON metadata is stored alongside the video.</li><li>Batch file, cronjob friendly.</li></ul>
 
 <h2><a id="disclaimer" class="anchor" href="#disclaimer">
   <svg class="octicon-link" aria-hidden="true">
@@ -266,7 +272,7 @@ first already downloaded video. This flag is recommended when you use Likeer
 to update your personal archive.</p>
 
 <pre><code class="language-bash">$ likeer -u @username -f
-# => Example Username - 000003.mp4 [========================] 12.1 MB / 12.1 MB
+# => Example Username - 000003.mp4 [========================] 11.1 MB | 100%
 # => Example Username - 000002.mp4; skipping
 # => User @username in sync!</code></pre>
 
