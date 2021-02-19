@@ -15,8 +15,8 @@ module LikeeScraper
         parser.on(
           "-u @USERNAME⠀or⠀ID", "--user @USERNAME⠀or⠀ID",
           <<-TXT
-          Download all videos (and their metadata) published by the given user.
-          » Username: @Likee_USA (starts with a '@')
+          Download videos (and their metadata) published by the given user.
+          » Username: @Likee_USA (starts with an "@")
           » ID: 3007\n
           TXT
         ) do |value|
@@ -26,7 +26,7 @@ module LikeeScraper
         parser.on(
           "-a FILE", "--batch-file FILE",
           <<-TXT
-          File containing IDs or @usernames to download, one ID per line.
+          File containing @usernames or User IDs to download, one identifier per line.
           Empty lines or lines starting with '#' are considered as comments
           and ignored.\n
           TXT
@@ -81,8 +81,7 @@ module LikeeScraper
         exit(1)
       end
 
-      LikeeScraper
-        .download_users(usernames_or_user_ids, fast_update: fast_update)
+      LikeeScraper.download_users(usernames_or_user_ids, fast_update: fast_update)
     end
   end
 end
