@@ -144,8 +144,9 @@
 <img src="https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg" alt="Integration Tests"/>
 <a href="https://github.com/kandayo/likee-scraper/releases"><img src="https://img.shields.io/github/release/kandayo/likee-scraper.svg?label=Release" alt="GitHub release"/></a></p>
 
-<p>Download videos (and their metadata) from Likee. The videos are downloaded in
-their original quality, with no watermark.</p>
+<p>Download videos (and their metadata) from Likee.</p>
+
+<p>The videos are downloaded in their original quality, with no watermark.</p>
 
 <p>See also: <a href="https://github.com/kandayo/likee.cr"><strong>Likee API Wrapper</strong></a>.</p>
 
@@ -167,7 +168,7 @@ their original quality, with no watermark.</p>
   &lt;img src="https://user-images.githubusercontent.com/43556511/108448057-ee8f7680-7258-11eb-90bd-7f253b3d0b4f.png" alt="Terminalizer">
 &lt;/p></p>
 
-<ul><li>Download profiles by @username.</li><li>Download profiles by user ID.</li><li>Built for archivists: smart fast update.</li><li>Extract metadata from entities.</li></ul>
+<ul><li>Download profiles by @username.</li><li>Download profiles by User ID.</li><li>Built for archivists in mind: smart fast update.</li><li>Extract metadata from entities.</li><li>Batch file, cronjob friendly.</li></ul>
 
 <h2><a id="disclaimer" class="anchor" href="#disclaimer">
   <svg class="octicon-link" aria-hidden="true">
@@ -220,7 +221,7 @@ shards build --release</code></pre>
 </a>Download profile by @username</h3>
 
 <p>Looking up a user by username requires an additional API request. It's strongly
-recommended to use user IDs. Usernames must be prefixed with an "@".</p>
+recommended to use User IDs. Usernames must be prefixed with an "@".</p>
 
 <pre><code class="language-bash">$ likeer -u @username</code></pre>
 
@@ -230,7 +231,7 @@ recommended to use user IDs. Usernames must be prefixed with an "@".</p>
   </svg>
 </a>Download profile by ID</h3>
 
-<p>If a identifier does not have a prefix, it is assumed to be an user ID.</p>
+<p>If a identifier does not have a prefix, it is assumed to be an User ID.</p>
 
 <pre><code class="language-bash">$ likeer -u 11111111</code></pre>
 
