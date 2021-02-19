@@ -75,7 +75,7 @@ Looking up a user by username requires an additional API request. It's strongly
 recommended to use User IDs. Usernames must be prefixed with an `@`.
 
 ```bash
-$ likeer -u @username
+$ likeer -u @username1 -u @username2
 ```
 
 ### Download profile by ID
