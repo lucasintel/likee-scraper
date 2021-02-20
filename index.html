@@ -157,7 +157,7 @@
   </svg>
 </a>Index</h2>
 
-<ul><li><a href="#features">Features</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#installation">Installation</a></li><ul><li><a href="#pre-built">Pre-built</a></li><li><a href="#from-source">From source</a></li></ul><li><a href="#usage">Usage</a></li><ul><li><a href="#download-profile-by-username">Download profile by @username</a></li><li><a href="#download-profile-by-user-id">Download profile by User ID</a></li><li><a href="#batch-file">Batch file</a></li><li><a href="#fast-update">Fast update</a></li></ul><li><a href="#contributing">Contributing</a></li><li><a href="#contributors">Contributors</a></li></ul>
+<ul><li><a href="#features">Features</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#installation">Installation</a></li><ul><li><a href="#pre-built-recommended">Pre-built - Recommended</a></li><li><a href="#from-source">From source</a></li></ul><li><a href="#usage">Usage</a></li><ul><li><a href="#download-profile-by-username">Download profile by @username</a></li><li><a href="#download-profile-by-user-id">Download profile by User ID</a></li><li><a href="#batch-file">Batch file</a></li><li><a href="#fast-update">Fast update</a></li></ul><li><a href="#contributing">Contributing</a></li><li><a href="#contributors">Contributors</a></li></ul>
 
 <h2><a id="features" class="anchor" href="#features">
   <svg class="octicon-link" aria-hidden="true">
@@ -210,17 +210,15 @@ Likee or any of its affiliates or subsidiaries.</p>
   </svg>
 </a>Installation</h2>
 
-<h3><a id="pre-built" class="anchor" href="#pre-built">
+<h3><a id="pre-built-recommended" class="anchor" href="#pre-built-recommended">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Pre-built</h3>
+</a>Pre-built - Recommended</h3>
 
 <p>Just download the latest release for your platform <a href="https://github.com/kandayo/likee-scraper/releases">here</a>.</p>
 
-<p>Move the binary to your PATH or just use it right away.</p>
-
-<pre><code class="language-bash">./likeer --help</code></pre>
+<p>Then move the binary to your PATH, or just use it right away.</p>
 
 <h3><a id="from-source" class="anchor" href="#from-source">
   <svg class="octicon-link" aria-hidden="true">
@@ -228,7 +226,7 @@ Likee or any of its affiliates or subsidiaries.</p>
   </svg>
 </a>From source</h3>
 
-<p>It only takes a few seconds to compile it yourself. It's not hard.</p>
+<p>It only takes a few seconds to compile it yourself. It's not rocket science.</p>
 
 <p>Build dependencies:</p>
 
@@ -239,7 +237,7 @@ $ cd likee-scraper
 $ shards build --release
 $ ./bin/likeer --help</code></pre>
 
-<p>Move the binary to your path or just use it right away.</p>
+<p>Then move the binary to your PATH, or just use it right away.</p>
 
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
@@ -303,7 +301,7 @@ to update your personal archive.</p>
 
 <p>This concept was inspired by Instaloader.</p>
 
-<pre><code class="language-bash">$ likeer -f -u @username
+<pre><code class="language-crystal">$ likeer -f -u @username
 
 Downloading 1 profile: @username.
 
