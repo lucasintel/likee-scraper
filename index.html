@@ -140,13 +140,16 @@
   </svg>
 </a>Likee Scraper</h1>
 
-<p><img src="https://github.com/kandayo/likee-scraper/workflows/Unit%20Tests/badge.svg" alt="Unit Tests"/>
-<img src="https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg" alt="Integration Tests"/>
+<p><a href="https://crystal-lang.org/"><img src="https://img.shields.io/badge/Crystal-0.36.1-%23333333" alt="Built with Crystal 0.36.1"/></a>
+<a href="https://github.com/kandayo/likee-scraper/actions"><img src="https://github.com/kandayo/likee-scraper/workflows/Unit%20Tests/badge.svg" alt="Unit Tests"/></a>
+<a href="https://github.com/kandayo/likee-scraper/actions"><img src="https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg" alt="Integration Tests"/></a>
 <a href="https://github.com/kandayo/likee-scraper/releases"><img src="https://img.shields.io/github/release/kandayo/likee-scraper.svg?label=Release" alt="GitHub release"/></a></p>
 
-<p>Download videos (and their metadata) from Likee.</p>
+<p>Download videos from Likee, in their original quality, without watermark.</p>
 
-<p>The videos are downloaded in their original quality, with no watermark.</p>
+<p>The integration tests are scheduled to run twice a day, through Github Actions.
+If the build is broken, please file
+<a href="https://github.com/kandayo/likee-scraper/issues">an Issue</a>.</p>
 
 <p>See also: <a href="https://github.com/kandayo/likee.cr"><strong>Likee API Wrapper</strong></a>.</p>
 
@@ -156,7 +159,7 @@
   </svg>
 </a>Index</h2>
 
-<ul><li><a href="#features">Features</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><ul><li><a href="#download-profile-by-username">Download profile by @username</a></li><li><a href="#download-profile-by-id">Download profile by ID</a></li><li><a href="#batch-file">Batch file</a></li><li><a href="#fast-update">Fast update</a></li></ul><li><a href="#contributing">Contributing</a></li><li><a href="#contributors">Contributors</a></li></ul>
+<ul><li><a href="#features">Features</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#installation">Installation</a></li><ul><li><a href="#pre-built">Pre-built</a></li><li><a href="#from-source">From source</a></li></ul><li><a href="#usage">Usage</a></li><ul><li><a href="#download-profile-by-username">Download profile by @username</a></li><li><a href="#download-profile-by-user-id">Download profile by User ID</a></li><li><a href="#batch-file">Batch file</a></li><li><a href="#fast-update">Fast update</a></li></ul><li><a href="#contributing">Contributing</a></li><li><a href="#contributors">Contributors</a></li></ul>
 
 <h2><a id="features" class="anchor" href="#features">
   <svg class="octicon-link" aria-hidden="true">
@@ -165,16 +168,32 @@
 </a>Features</h2>
 
 <pre><code class="language-crystal">$ likeer --user @Likee_US --user @Likee_UK --fast-update
-Collecting videos from profile @Likee_US.
-Likee US - 000005.mp4 [========================] 11.1 MB | 100%
-Likee US - 000004.mp4; skipping
-✅ Likee US in sync!
-Collecting videos from profile @Likee_UK.
-Likee UK - 000011.mp4 [========================] 22.2 MB | 100%
-Likee UK - 000010.mp4; skipping
-✅ Likee UK in sync!</code></pre>
 
-<ul><li>Download profiles by @username or User ID.</li><li>Built for archivists in mind: smart fast update.</li><li>JSON metadata is stored alongside the video.</li><li>Batch file, cronjob friendly.</li></ul>
+Downloading 2 profiles: @Likee_US @Likee_UK.
+
+Collecting videos from profile @Likee_US.
+ + Likee US - 000005.mp4 [========================] 11.1 MB | 100%
+ + Likee US - 000004.mp4; exists
+✅ Likee US in sync!
+
+Collecting videos from profile @Likee_UK.
+ + Likee UK - 000011.mp4 [========================] 22.2 MB | 100%
+ + Likee UK - 000010.mp4; exists
+✅ Likee UK in sync!
+
+$ ls
+.
+├── 11111111
+│   ├── 2021-01-01 00:14:01 - 000005.mp4
+│   ├── 2021-01-01 00:15:01 - 000004.mp4
+│   └── [...]
+├── 22222222
+│   ├── 2021-01-02 00:14:01 - 000011.mp4
+│   ├── 2021-01-02 00:15:01 - 000010.mp4
+│   └── [...]
+└──</code></pre>
+
+<ul><li>Download profiles by @username or User ID.</li><li><strong>Built with archivists in mind</strong>: incremental sync.</li><li>JSON metadata is stored alongside the video.</li><li>Batch file, cronjob friendly.</li></ul>
 
 <h2><a id="disclaimer" class="anchor" href="#disclaimer">
   <svg class="octicon-link" aria-hidden="true">
@@ -193,24 +212,36 @@ Likee or any of its affiliates or subsidiaries.</p>
   </svg>
 </a>Installation</h2>
 
+<h3><a id="pre-built" class="anchor" href="#pre-built">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Pre-built</h3>
+
+<p>Just download the latest release for your platform <a href="https://github.com/kandayo/likee-scraper/releases">here</a>.</p>
+
+<p>Move the binary to your PATH or just use it right away.</p>
+
+<pre><code class="language-bash">./likeer --help</code></pre>
+
 <h3><a id="from-source" class="anchor" href="#from-source">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>From source</h3>
 
-<ol><li>Clone the repository:</li></ol>
+<p>It only takes a few seconds to compile it yourself. It's not hard.</p>
 
-<pre><code class="language-bash">git clone https://github.com/kandayo/likee-scraper</code></pre>
+<p>Build dependencies:</p>
 
-<ol><li>Compile the binary in release mode:</li></ol>
+<ul><li>Crystal language, https://crystal-lang.org/install.</li></ul>
 
-<pre><code class="language-bash">cd likee-scraper
-shards build --release</code></pre>
+<pre><code class="language-bash">$ git clone https://github.com/kandayo/likee-scraper
+$ cd likee-scraper
+$ shards build --release
+$ ./bin/likeer --help</code></pre>
 
-<ol><li>Move the binary to your PATH or use it right away:</li></ol>
-
-<pre><code class="language-bash">./bin/likeer --help</code></pre>
+<p>Move the binary to your path or just use it right away.</p>
 
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
@@ -227,15 +258,15 @@ shards build --release</code></pre>
 </a>Download profile by @username</h3>
 
 <p>Looking up a user by username requires an additional API request. It's strongly
-recommended to use User IDs. Usernames must be prefixed with an <code>@</code>.</p>
+recommended to use User IDs instead. Usernames must be prefixed with an <code>@</code>.</p>
 
-<pre><code class="language-bash">$ likeer -u @username1 -u @username2</code></pre>
+<pre><code class="language-bash">$ likeer -u @username1 -u @username2 [...]</code></pre>
 
-<h3><a id="download-profile-by-id" class="anchor" href="#download-profile-by-id">
+<h3><a id="download-profile-by-user-id" class="anchor" href="#download-profile-by-user-id">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Download profile by ID</h3>
+</a>Download profile by User ID</h3>
 
 <p>If a identifier does not have a prefix, it is assumed to be an User ID.</p>
 
@@ -259,6 +290,7 @@ Lines starting with "#" or empty lines are considered as comments and ignored.</
 ~> # Comment (ignored)
 ~> @username
 ~> 111111111
+
 $ likeer -a batch.txt</code></pre>
 
 <h3><a id="fast-update" class="anchor" href="#fast-update">
@@ -271,10 +303,16 @@ $ likeer -a batch.txt</code></pre>
 first already downloaded video. This flag is recommended when you use Likeer
 to update your personal archive.</p>
 
-<pre><code class="language-bash">$ likeer -u @username -f
-# => Example Username - 000003.mp4 [========================] 11.1 MB | 100%
-# => Example Username - 000002.mp4; skipping
-# => User @username in sync!</code></pre>
+<p>This concept was inspired by Instaloader.</p>
+
+<pre><code class="language-bash">$ likeer -f -u @username
+
+Downloading 1 profile: @username.
+
+Collecting videos from profile @username.
+ + Example Username - 000003.mp4 [========================] 11.1 MB | 100%
+ + Example Username - 000002.mp4; exists
+✅ Example Username in sync!</code></pre>
 
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
