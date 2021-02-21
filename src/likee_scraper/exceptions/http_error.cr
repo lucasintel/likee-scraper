@@ -1,5 +1,3 @@
-require "http/client"
-
 module LikeeScraper
   # The `HTTPError` exception is raised when the HTTP status is not between
   # 200 and 299.

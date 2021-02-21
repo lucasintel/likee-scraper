@@ -47,5 +47,20 @@ describe LikeeScraper::UsernameNormalizer do
 
       subject.call.should be_nil
     end
+
+    it "sets Referer and User-Agent headers" do
+      WebMock
+        .stub(:get, "https://likee.video/user/@111/amp")
+        .with(
+          headers: {
+            "Referer" => "https://google.com/",
+            "User-Agent" => "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+          }
+        )
+
+      subject = LikeeScraper::UsernameNormalizer.new("@111")
+
+      subject.call
+    end
   end
 end

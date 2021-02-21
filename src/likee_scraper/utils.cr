@@ -1,5 +1,3 @@
-require "retriable"
-
 module LikeeScraper
   # The `Utils` module defines multiple helpers.
   module Utils
@@ -7,13 +5,13 @@ module LikeeScraper
     def self.retry_on_connection_error(&block)
       on_retry_callback =
         ->(_ex : Exception, attempt : Int32, _elapsed_time : Time::Span, _next_interval : Time::Span) do
-          Log.error { "An error occoured while fetching posts; retring (#{attempt}/5)..." }
+          Log.error { "An error occoured while executing request; retring (#{attempt}/5)" }
         end
 
       Retriable.retry(
         on: {
           IO::TimeoutError,
-          Errno::ECONNRESET,
+          OpenSSL::SSL::Error,
           Likee::RequestFailedError,
           Likee::APIError,
           HTTPError,

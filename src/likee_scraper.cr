@@ -1,4 +1,10 @@
+require "file_utils"
+require "http/client"
 require "likee"
+require "log"
+require "progress"
+require "retriable"
+
 require "./likee_scraper/**"
 
 module LikeeScraper
@@ -21,8 +27,10 @@ module LikeeScraper
   end
 
   def self.download_users(users = [] of String, fast_update = false) : Nil
+    Log.info { "\nDownloading #{users.size} profiles: #{users.join(' ')}." }
+
     users.each do |username_or_id|
-      Log.info { "Collecting videos from profile #{username_or_id}." }
+      Log.info { "\nCollecting videos from profile #{username_or_id}." }
       download_user(username_or_id, fast_update: fast_update)
     end
   end

@@ -13,6 +13,8 @@ crystal: 0.36.1
 dependencies:
   likee:
     github: kandayo/likee.cr
+  progress:
+    github: kandayo/progress.cr
   retriable:
     github: Sija/retriable.cr
 

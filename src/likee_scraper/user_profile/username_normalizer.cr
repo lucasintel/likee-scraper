@@ -1,8 +1,6 @@
-require "http/client"
-
 module LikeeScraper
   class UsernameNormalizer
-    BASE_URL      = "https://likee.video"
+    BASE_URL      = URI.parse("https://likee.video")
     USER_ID_REGEX = /likevideo\:\/\/profile\?uid\=(?<user_id>\d+)/
     USER_AGENT    = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 
@@ -25,11 +23,11 @@ module LikeeScraper
     end
 
     private def build_client : HTTP::Client
-      conn = HTTP::Client.new(URI.parse(BASE_URL), tls: true)
+      conn = HTTP::Client.new(BASE_URL, tls: true)
 
       conn.connect_timeout = 2.seconds
       conn.write_timeout = 2.seconds
-      conn.read_timeout = 2.seconds
+      conn.read_timeout = 5.seconds
 
       conn.before_request do |request|
         request.headers.merge!(headers)
@@ -40,8 +38,7 @@ module LikeeScraper
 
     private def headers : HTTP::Headers
       HTTP::Headers{
-        "Origin"     => "https://likee.video",
-        "Referer"    => "https://likee.video/",
+        "Referer"    => "https://google.com/",
         "User-Agent" => USER_AGENT,
       }
     end
