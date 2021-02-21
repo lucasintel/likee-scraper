@@ -4,8 +4,8 @@ module LikeeScraper
     READ_TIMEOUT    = 1.minute
     HTTPS           = "https"
 
-    # Executes a GET request and yields the response. If the repsonse is not
-    # sucessful, raises `LikeeScraper::HTTPError`.
+    # Executes a GET request and yields the response. If the response is not
+    # successful, raises `LikeeScraper::HTTPError`.
     def self.call(url : String, referer : String) : Nil
       uri = URI.parse(url)
 
