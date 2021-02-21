@@ -127,7 +127,7 @@ IDs must not be prefixed with an `@`, e.g. `1111111`.
 ```bash
 $ cat batch.txt
 ~> # Comment (ignored)
-~> @username
+~> @username   # Inline comments are also allowed.
 ~> 111111111
 
 $ likeer -a batch.txt

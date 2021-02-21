@@ -22,8 +22,8 @@ describe LikeeScraper::CLI::FileProcessor do
         <<-FILE
         # Commented Line
 
-        @username
-        111
+        @username  # Inline comment
+        111        # One more inline comment
 
         222
         FILE
