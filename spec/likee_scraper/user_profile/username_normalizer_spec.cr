@@ -53,8 +53,8 @@ describe LikeeScraper::UsernameNormalizer do
         .stub(:get, "https://likee.video/user/@111/amp")
         .with(
           headers: {
-            "Referer" => "https://google.com/",
-            "User-Agent" => "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+            "Referer"    => "https://google.com/",
+            "User-Agent" => "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
           }
         )
 

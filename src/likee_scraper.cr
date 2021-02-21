@@ -2,6 +2,7 @@ require "file_utils"
 require "http/client"
 require "likee"
 require "log"
+require "option_parser"
 require "progress"
 require "retriable"
 
@@ -33,5 +34,9 @@ module LikeeScraper
       Log.info { "\nCollecting videos from profile #{username_or_id}." }
       download_user(username_or_id, fast_update: fast_update)
     end
+  end
+
+  def self.run
+    LikeeScraper::CLI.run
   end
 end

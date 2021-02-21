@@ -1,13 +1,8 @@
-require "option_parser"
-
-require "../likee_scraper"
-require "./main/*"
-
 module LikeeScraper
   module CLI
     def self.run : Nil
-      fast_update = false
       usernames_or_user_ids = [] of String
+      fast_update = false
 
       parsed = OptionParser.parse do |parser|
         parser.banner = "Usage: likeer [arguments]"
@@ -26,9 +21,9 @@ module LikeeScraper
         parser.on(
           "-a FILE", "--batch-file FILE",
           <<-TXT
-          File containing @usernames or User IDs to download, one identifier per line.
-          Empty lines or lines starting with '#' are considered as comments
-          and ignored.\n
+          File containing @usernames or User IDs to download, one identifier
+          per line. Empty lines or lines starting with '#' are considered as
+          comments and ignored.\n
           TXT
         ) do |value|
           extracted_ids = FileProcessor.call(value)
@@ -45,8 +40,8 @@ module LikeeScraper
           "-f", "--fast-update",
           <<-TXT
           Stop when encountering the first already-downloaded video.
-          This flag is recommended when you use Likeer to update your personal
-          archive.\n
+          This flag is recommended when you use Likeer to update your
+          personal archive.\n
           TXT
         ) do
           fast_update = true
@@ -85,5 +80,3 @@ module LikeeScraper
     end
   end
 end
-
-LikeeScraper::CLI.run
