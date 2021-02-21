@@ -6,7 +6,7 @@ shards:
 
   likee:
     git: https://github.com/kandayo/likee.cr.git
-    version: 0.2.1
+    version: 0.2.2
 
   progress:
     git: https://github.com/kandayo/progress.cr.git
