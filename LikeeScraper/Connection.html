@@ -8,13 +8,13 @@
 <meta name="crystal_docs.project_name" content="Likee Scraper">
 
 
-    <link rel="canonical" href="https://absolab.xyz/likee-scraper/LikeeScraper/LikeeLogger.html">
+    <link rel="canonical" href="https://absolab.xyz/likee-scraper/LikeeScraper/Connection.html">
 
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="Likee Scraper">
-  <title>LikeeScraper::LikeeLogger - Likee Scraper main</title>
+  <title>LikeeScraper::Connection - Likee Scraper main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -52,21 +52,6 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent " data-id="Likee Scraper/Likee" data-name="likee">
-      <a href="../Likee.html">Likee</a>
-      
-        <ul>
-  
-  <li class=" " data-id="Likee Scraper/Likee/Video" data-name="likee::video">
-      <a href="../Likee/Video.html">Video</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
   <li class="parent open current" data-id="Likee Scraper/LikeeScraper" data-name="likeescraper">
       <a href="../LikeeScraper.html">LikeeScraper</a>
       
@@ -87,13 +72,13 @@
       
     </li>
   
-  <li class=" " data-id="Likee Scraper/LikeeScraper/HTTPError" data-name="likeescraper::httperror">
-      <a href="../LikeeScraper/HTTPError.html">HTTPError</a>
+  <li class=" current" data-id="Likee Scraper/LikeeScraper/Connection" data-name="likeescraper::connection">
+      <a href="../LikeeScraper/Connection.html">Connection</a>
       
     </li>
   
-  <li class=" current" data-id="Likee Scraper/LikeeScraper/LikeeLogger" data-name="likeescraper::likeelogger">
-      <a href="../LikeeScraper/LikeeLogger.html">LikeeLogger</a>
+  <li class=" " data-id="Likee Scraper/LikeeScraper/HTTPError" data-name="likeescraper::httperror">
+      <a href="../LikeeScraper/HTTPError.html">HTTPError</a>
       
     </li>
   
@@ -136,12 +121,10 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> LikeeScraper::LikeeLogger
+  <span class="kind">module</span> LikeeScraper::Connection
 
 </h1>
 
-
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LikeeScraper/LikeeLogger.html">LikeeScraper::LikeeLogger</a></li><li class="superclass">Log::StaticFormatter</li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -169,8 +152,8 @@
   </h2>
   
     
-      <a href="https://github.com/kandayo/likee-scraper/blob/dab80e4215368b4a9b6085ca52cb2415b1d82375/src/likee_scraper/logger.cr#L4" target="_blank">
-        likee_scraper/logger.cr
+      <a href="https://github.com/kandayo/likee-scraper/blob/843159206e9125b48c801926f05f656a9a3377e1/src/likee_scraper/connection.cr#L2" target="_blank">
+        likee_scraper/connection.cr
       </a>
     
     <br/>
@@ -178,26 +161,53 @@
 
 
 
-
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="CONNECT_TIMEOUT">
+        <strong>CONNECT_TIMEOUT</strong> = <code><span class="n">5</span>.seconds</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HTTPS">
+        <strong>HTTPS</strong> = <code><span class="s">&quot;https&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="READ_TIMEOUT">
+        <strong>READ_TIMEOUT</strong> = <code><span class="n">1</span>.minute</code>
+      </dt>
+      
+    
+  </dl>
 
 
 
 
 
   <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Summary
+    Class Method Summary
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#run:IO-instance-method" class="signature"><strong>#run</strong> : IO</a>
+        <a href="#call(url:String,referer:String,&):Nil-class-method" class="signature"><strong>.call</strong>(url : String, referer : String, &) : Nil</a>
         
-          <div class="summary"><p>Subclasses must implement this method to define the output pattern</p></div>
+          <div class="summary"><p>Executes a GET request and yields the response.</p></div>
         
       </li>
     
@@ -207,89 +217,48 @@
 
 
 
+
+
 <div class="methods-inherited">
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
   
 </div>
 
 
 
 
-
-
   <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Detail
+    Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="run:IO-instance-method">
+    <div class="entry-detail" id="call(url:String,referer:String,&):Nil-class-method">
       <div class="signature">
         
-        def <strong>run</strong> : IO
+        def self.<strong>call</strong>(url : String, referer : String, &) : Nil
 
-        <a class="method-permalink" href="#run:IO-instance-method">#</a>
+        <a class="method-permalink" href="#call(url:String,referer:String,&):Nil-class-method">#</a>
       </div>
       
         <div class="doc">
           
-            <div class="doc-inherited">
-              Description copied from struct Log::StaticFormatter
-            </div>
-          
-          <p>Subclasses must implement this method to define the output pattern</p>
+          <p>Executes a GET request and yields the response. If the repsonse is not
+sucessful, raises <code><a href="../LikeeScraper/HTTPError.html">LikeeScraper::HTTPError</a></code>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/kandayo/likee-scraper/blob/dab80e4215368b4a9b6085ca52cb2415b1d82375/src/likee_scraper/logger.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/kandayo/likee-scraper/blob/843159206e9125b48c801926f05f656a9a3377e1/src/likee_scraper/connection.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
+
+
 
 
 

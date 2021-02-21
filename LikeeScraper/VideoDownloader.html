@@ -52,21 +52,6 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent " data-id="Likee Scraper/Likee" data-name="likee">
-      <a href="../Likee.html">Likee</a>
-      
-        <ul>
-  
-  <li class=" " data-id="Likee Scraper/Likee/Video" data-name="likee::video">
-      <a href="../Likee/Video.html">Video</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
   <li class="parent open current" data-id="Likee Scraper/LikeeScraper" data-name="likeescraper">
       <a href="../LikeeScraper.html">LikeeScraper</a>
       
@@ -87,13 +72,13 @@
       
     </li>
   
-  <li class=" " data-id="Likee Scraper/LikeeScraper/HTTPError" data-name="likeescraper::httperror">
-      <a href="../LikeeScraper/HTTPError.html">HTTPError</a>
+  <li class=" " data-id="Likee Scraper/LikeeScraper/Connection" data-name="likeescraper::connection">
+      <a href="../LikeeScraper/Connection.html">Connection</a>
       
     </li>
   
-  <li class=" " data-id="Likee Scraper/LikeeScraper/LikeeLogger" data-name="likeescraper::likeelogger">
-      <a href="../LikeeScraper/LikeeLogger.html">LikeeLogger</a>
+  <li class=" " data-id="Likee Scraper/LikeeScraper/HTTPError" data-name="likeescraper::httperror">
+      <a href="../LikeeScraper/HTTPError.html">HTTPError</a>
       
     </li>
   
@@ -169,7 +154,7 @@
   </h2>
   
     
-      <a href="https://github.com/kandayo/likee-scraper/blob/dab80e4215368b4a9b6085ca52cb2415b1d82375/src/likee_scraper/user_profile/video_downloader.cr#L6" target="_blank">
+      <a href="https://github.com/kandayo/likee-scraper/blob/843159206e9125b48c801926f05f656a9a3377e1/src/likee_scraper/user_profile/video_downloader.cr#L2" target="_blank">
         likee_scraper/user_profile/video_downloader.cr
       </a>
     
@@ -195,16 +180,6 @@
       </dt>
       
     
-      <dt class="entry-const" id="MEGABYTE">
-        <strong>MEGABYTE</strong> = <code><span class="n">1024</span> <span class="o">**</span> <span class="n">2</span></code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="PROGRESS_BAR_SIZE">
-        <strong>PROGRESS_BAR_SIZE</strong> = <code><span class="n">30</span></code>
-      </dt>
-      
-    
   </dl>
 
 
@@ -220,7 +195,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(video:Likee::Video)-class-method" class="signature"><strong>.new</strong>(video : Likee::Video)</a>
+        <a href="#new(video:Likee::Video,directory:String?=nil)-class-method" class="signature"><strong>.new</strong>(video : Likee::Video, directory : String? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -243,7 +218,7 @@
       <li class="entry-summary">
         <a href="#call:Bool-instance-method" class="signature"><strong>#call</strong> : Bool</a>
         
-          <div class="summary"><p>Downloads a <code><a href="../Likee/Video.html">Likee::Video</a></code>.</p></div>
+          <div class="summary"><p>Downloads a <code>Likee::Video</code>.</p></div>
         
       </li>
     
@@ -287,18 +262,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(video:Likee::Video)-class-method">
+    <div class="entry-detail" id="new(video:Likee::Video,directory:String?=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(video : <a href="../Likee/Video.html">Likee::Video</a>)
+        def self.<strong>new</strong>(video : Likee::Video, directory : String? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(video:Likee::Video)-class-method">#</a>
+        <a class="method-permalink" href="#new(video:Likee::Video,directory:String?=nil)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/kandayo/likee-scraper/blob/dab80e4215368b4a9b6085ca52cb2415b1d82375/src/likee_scraper/user_profile/video_downloader.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/kandayo/likee-scraper/blob/843159206e9125b48c801926f05f656a9a3377e1/src/likee_scraper/user_profile/video_downloader.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -327,14 +302,14 @@
       
         <div class="doc">
           
-          <p>Downloads a <code><a href="../Likee/Video.html">Likee::Video</a></code>. The video is initially saved to a temporary
-file, then it's moved to its definitive location.</p>
+          <p>Downloads a <code>Likee::Video</code>. The video is initially saved to a temporary
+destination, then it's moved to its definitive destination.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/kandayo/likee-scraper/blob/dab80e4215368b4a9b6085ca52cb2415b1d82375/src/likee_scraper/user_profile/video_downloader.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/kandayo/likee-scraper/blob/843159206e9125b48c801926f05f656a9a3377e1/src/likee_scraper/user_profile/video_downloader.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
