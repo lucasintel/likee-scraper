@@ -14,10 +14,15 @@ on:
 jobs:
   Specs:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        crystal: [0.36.1, latest]
+
     steps:
       - uses: actions/checkout@v2
       - uses: oprypin/install-crystal@v1
         with:
-          crystal: 0.36.1
-      - run: shards install
+          crystal: ${{ matrix.crystal }}
+      - run: shards install --ignore-crystal-version
       - run: crystal spec --tag integration

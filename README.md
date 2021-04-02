@@ -86,7 +86,7 @@ Build dependencies:
 ```bash
 $ git clone https://github.com/kandayo/likee-scraper
 $ cd likee-scraper
-$ shards build --release
+$ shards build --release --ignore-crystal-version
 $ ./bin/likeer --help
 ```
 

@@ -6,15 +6,15 @@ shards:
 
   likee:
     git: https://github.com/kandayo/likee.cr.git
-    version: 0.2.2
+    version: 0.2.3
 
   progress:
     git: https://github.com/kandayo/progress.cr.git
-    version: 0.1.1
+    version: 0.1.2
 
   retriable:
-    git: https://github.com/Sija/retriable.cr.git
-    version: 0.2.2
+    git: https://github.com/sija/retriable.cr.git
+    version: 0.2.3
 
   webmock:
     git: https://github.com/manastech/webmock.cr.git

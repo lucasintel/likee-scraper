@@ -1,5 +1,5 @@
 name: likee_scraper
-version: 0.2.2
+version: 0.2.3
 
 authors:
   - kandayo <kdy@absolab.xyz>
@@ -8,7 +8,7 @@ targets:
   likeer:
     main: src/main.cr
 
-crystal: 0.36.1
+crystal: ">= 0.36.0"
 
 dependencies:
   likee:
