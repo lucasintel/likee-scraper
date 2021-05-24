@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        USER_ID: "${UID:-1000}"
+    image: likeer-env:1.0.0
+    restart: "no"
+    user: "${UID:-1000}:${UID:-1000}"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app:cached
+    tmpfs:
+      - /tmp

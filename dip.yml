@@ -1,0 +1,41 @@
+version: "7.0"
+
+compose:
+  project_name: likeer
+  files:
+    - docker-compose.dev.yml
+
+interaction:
+  runner:
+    description: Run an arbitrary command within a container
+    service: runner
+    command: /bin/sh
+
+  crystal:
+    description: Run crystal commands
+    service: runner
+    command: crystal
+
+  shards:
+    description: Run shards commands
+    service: runner
+    command: shards
+
+  spec:
+    description: Run specs
+    service: runner
+    command: crystal spec
+
+  release:
+    description: Release
+    service: runner
+    command: shards build --ignore-crystal-version --release --static
+
+  exec:
+    description: Run
+    service: runner
+    command: crystal run src/main.cr
+
+provision:
+  - dip compose down --remove-orphans --volumes
+  - dip shards install --ignore-crystal-version

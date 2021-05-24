@@ -1,0 +1,11 @@
+ARG CRYSTAL_VERSION=1.0.0
+FROM crystallang/crystal:$CRYSTAL_VERSION-alpine
+
+LABEL maintainer="kdy@absolab.xyz"
+
+ARG USER_ID
+RUN adduser --disabled-password --gecos '' --uid $USER_ID u
+
+WORKDIR /app
+
+USER u
