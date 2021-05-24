@@ -1,3 +1,3 @@
 module LikeeScraper
-  VERSION = "0.2.3"
+  VERSION = {{ `shards version "#{__DIR__}"`.strip.stringify }}
 end
