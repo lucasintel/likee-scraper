@@ -1,7 +1,7 @@
 module LikeeScraper
   class UsernameNormalizer
     BASE_URL      = URI.parse("https://likee.video")
-    USER_ID_REGEX = /likevideo\:\/\/profile\?uid\=(?<user_id>\d+)/
+    USER_ID_REGEX = /"uid"\:"(?<user_id>\d+)",/
     USER_AGENT    = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 
     @client : HTTP::Client
@@ -14,7 +14,7 @@ module LikeeScraper
       # The identifier is already the user_id.
       return @identifier unless @identifier.starts_with?("@")
 
-      response = @client.get("/user/#{@identifier}/amp")
+      response = @client.get("/#{@identifier}")
       return unless response.success?
 
       if match = response.body.match(USER_ID_REGEX)

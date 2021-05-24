@@ -10,11 +10,11 @@ describe LikeeScraper::UsernameNormalizer do
 
     it "scrapes Likee website to find out the user_id" do
       WebMock
-        .stub(:get, "https://likee.video/user/@111/amp")
+        .stub(:get, "https://likee.video/@111")
         .to_return(
           status: 200,
           body: <<-HTML
-            <meta property="al:android:url" content="likevideo://profile?uid=999">
+            {"userinfo":{"uid":"999","yyuid":"foo","type":0}[...]}
           HTML
         )
 
@@ -25,7 +25,7 @@ describe LikeeScraper::UsernameNormalizer do
 
     it "returns nil when the user_id is not found in the page" do
       WebMock
-        .stub(:get, "https://likee.video/user/@111/amp")
+        .stub(:get, "https://likee.video/@111")
         .to_return(
           status: 200,
           body: <<-HTML
@@ -40,7 +40,7 @@ describe LikeeScraper::UsernameNormalizer do
 
     it "returns nil when the HTTP request is not successful" do
       WebMock
-        .stub(:get, "https://likee.video/user/@111/amp")
+        .stub(:get, "https://likee.video/@111")
         .to_return(status: 404, body: "")
 
       subject = LikeeScraper::UsernameNormalizer.new("@111")
@@ -50,7 +50,7 @@ describe LikeeScraper::UsernameNormalizer do
 
     it "sets Referer and User-Agent headers" do
       WebMock
-        .stub(:get, "https://likee.video/user/@111/amp")
+        .stub(:get, "https://likee.video/@111")
         .with(
           headers: {
             "Referer"    => "https://google.com/",
