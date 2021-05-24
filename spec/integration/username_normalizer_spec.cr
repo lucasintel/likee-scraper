@@ -4,7 +4,7 @@ LIKEE_OFFICIAL_ACCOUNT_USERNAME = "@Likee_USA"
 LIKEE_OFFICIAL_ACCOUNT_ID       = "30007"
 
 describe "User Normalizer" do
-  it "fetches the user id" do
+  it "fetches the user id", tags: "integration" do
     WebMock.allow_net_connect = true
 
     user_id =
