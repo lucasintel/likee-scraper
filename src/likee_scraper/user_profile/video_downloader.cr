@@ -19,7 +19,7 @@ module LikeeScraper
 
       Utils.retry_on_connection_error do
         Connection.call(@video.download_url, referer: referer) do |response|
-          file_size = response.headers.fetch("Content-Length", 1).to_u64
+          file_size = response.headers.fetch("Content-Length", "1").to_u64
           progress = build_progress_bar(file_size)
 
           File.open(temp_destination, "w") do |file|

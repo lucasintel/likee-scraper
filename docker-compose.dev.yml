@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.dev
       args:
         USER_ID: "${UID:-1000}"
-    image: likeer-env:1.0.0
+    image: likeer-env:1.1.0
     restart: "no"
     user: "${UID:-1000}:${UID:-1000}"
     stdin_open: true
