@@ -1,6 +1,6 @@
 # Likee Scraper
 
-[![Built with Crystal 0.36.1](https://img.shields.io/badge/Crystal-0.36.1-%23333333)](https://crystal-lang.org/)
+[![Built with Crystal 1.1.0](https://img.shields.io/badge/Crystal-1.1.0-%23333333)](https://crystal-lang.org/)
 [![GitHub release](https://img.shields.io/github/release/kandayo/likee-scraper.svg?label=Release)](https://github.com/kandayo/likee-scraper/releases)
 [![Unit Tests](https://github.com/kandayo/likee-scraper/workflows/Unit%20Tests/badge.svg)](https://github.com/kandayo/likee-scraper/actions)
 [![Integration Tests](https://github.com/kandayo/likee-scraper/workflows/Integration%20Tests/badge.svg)](https://github.com/kandayo/likee-scraper/actions)
